@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from 'react-router-dom';
+import { useUser } from '../../state/UserContext';
 import styles from './Auth.css';
 
 export default function Auth() {

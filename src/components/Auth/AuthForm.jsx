@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../state/UserContext';
+import { InputControl, FormButton } from '../Forms/FormControl';
+import { useForm } from '../Forms/useForm';
 
 export default function AuthForm({ mode = 'signin' }) {
   const { signUp, signIn, error } = useAuth();
@@ -38,6 +41,32 @@ export default function AuthForm({ mode = 'signin' }) {
   return (
     <form onSubmit={handleSubmit}>
       <h2>{type.prompt}</h2>
+
+      <InputControl
+        label="Email"
+        name="email"
+        type="email"
+        require
+        value={credentials.email}
+        onChange={handleChange}
+      />
+
+      <InputControl
+        label="Password"
+        name="password"
+        type="password"
+        required
+        value={credentials.password}
+        onChange={handleChange}
+      />
+
+      <FormButton>{type.button}</FormButton>
+
+      <p className="error">{error}</p>
+
+      <nav>
+        <Link to ={type.switch.Link}>{type.switch.prompt}</Link>
+      </nav>
     </form>
   );
 }

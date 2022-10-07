@@ -9,7 +9,7 @@ export async function signUpUser(credentials) {
 }
 
 export async function signInUser(credentials) {
-  const response = await post(`${URL}/signin`, credentials);
+  const response = await post(`${URL}/`, credentials);
   response.user = response.data;
   return response;
 }
@@ -20,7 +20,7 @@ export async function signOutUser() {
 }
 
 export async function verifyUser() {
-  const response = await get(`${URL}/verify`);
+  const response = await get(`${URL}/protected`);
   response.user = response.data;
   return response;
 }

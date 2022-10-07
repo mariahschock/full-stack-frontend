@@ -1,5 +1,6 @@
 import { FormButton, InputControl } from '../Forms/FormControl';
 import { useForm } from '../Forms/useForm';
+import styles from './ItemForm.css';
 
 const initialData = {
   description: '',
@@ -12,13 +13,13 @@ export default function ItemForm({ onAdd, ...rest }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { qty, ...obj } = data;
-    if (qty) obj.qyt = qty;
+    if (qty) obj.qty = qty;
     await onAdd(obj);
     reset();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.ItemForm} onSubmit={handleSubmit}>
       <InputControl
         label="Description"
         name="description"

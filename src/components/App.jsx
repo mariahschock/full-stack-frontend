@@ -9,10 +9,10 @@ import Auth from './Auth/Auth';
 import UserProvider from '../state/UserContext';
 import ProtectedRoute from './Auth/ProtectedRoute';
 import Layout from './Page/Layout';
-import Dashboard from './Dashboard/Dashboard';
 import ListsProvider from '../state/ListsContext';
 import { Lists } from './Lists/Lists';
 import { ShoppingList } from './Lists/ShoppingList';
+import ItemForm from './Lists/ItemForm';
 
 export default function App() {
   return (
@@ -26,7 +26,7 @@ export default function App() {
 
           <Route element={<ProtectedRoute />}>
             <Route element={<Layout />}>
-              <Route index element={<Dashboard />} />
+              <Route index element={<ItemForm />} />
               <Route element={<ListsProvider />}>
                 <Route path="lists">
                   <Route index element={<Lists />} />

@@ -3,6 +3,7 @@ import { useAuth } from '../../state/UserContext';
 import { InputControl, FormButton } from '../Forms/FormControl';
 import { useForm } from '../Forms/useForm';
 
+
 export default function AuthForm({ mode = 'signin' }) {
   const { signUp, signIn, error } = useAuth();
   const [credentials, handleChange] = useForm({
@@ -46,7 +47,7 @@ export default function AuthForm({ mode = 'signin' }) {
         label="Email"
         name="email"
         type="email"
-        require
+        required
         value={credentials.email}
         onChange={handleChange}
       />
@@ -65,7 +66,7 @@ export default function AuthForm({ mode = 'signin' }) {
       <p className="error">{error}</p>
 
       <nav>
-        <Link to ={type.switch.Link}>{type.switch.prompt}</Link>
+        <Link to={type.switch.link}>{type.switch.prompt}</Link>
       </nav>
     </form>
   );

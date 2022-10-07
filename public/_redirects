@@ -1,2 +1,2 @@
-/api/* https://full-stack-backe.herokuapp.com/
+/api/* https://full-stack-backe.herokuapp.com/:splat 200
 /*  /index.html   200

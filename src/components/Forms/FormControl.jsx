@@ -1,5 +1,5 @@
-import classnames from 'classnames';
 import styles from './FormControl.css';
+import classnames from 'classnames';
 
 function FormControl({ label, required, children }) {
   const className = classnames(styles.FormControl, styles.LabelText);

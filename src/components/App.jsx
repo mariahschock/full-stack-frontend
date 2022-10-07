@@ -23,6 +23,7 @@ export default function App() {
             <Route index element={<AuthForm mode="signin" />} />
             <Route path="signup" element={<AuthForm mode="signup" />}/>
           </Route>
+
           <Route element={<ProtectedRoute />}>
             <Route element={<Layout />}>
               <Route index element={<Dashboard />} />

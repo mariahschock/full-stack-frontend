@@ -1,6 +1,6 @@
 import { del, get, post } from './request.js';
 
-const URL = '/api/v1/auth';
+const URL = 'https://full-stack-backe.herokuapp.com/api/v1/auth';
 
 export async function signUpUser(credentials) {
   const response = await post(`${URL}/signup`, credentials);
